@@ -2,11 +2,21 @@
 // console.log("hello cuma") worked
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
+
+
 //showing date 
 $(document).ready(function() {
   var currentDate = dayjs().format('dddd, MMMM D');
  $('#currentDay').text(currentDate);
 });
+
+
+//button click event
+$(".saveBtn").click(function(){
+  alert("The paragraph was clicked.");
+});
+
+
 
 $(function () {
 
