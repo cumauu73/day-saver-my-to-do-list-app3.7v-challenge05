@@ -59,8 +59,8 @@ textarea {
 }
 
 .local-message {
-  color: #77dd77;
-  font-size: 30px;
+  color: black;
+  font-size: 20px;
   display: none;
   justify-content: center;
 }

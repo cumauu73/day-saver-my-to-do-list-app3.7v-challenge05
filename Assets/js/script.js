@@ -12,9 +12,11 @@ $(document).ready(function() {
 
 
 //button click event
-$(".saveBtn").click(function(){
-  // alert("The paragraph was clicked.");
-  $(".local-message").css("display", "flex")
+$(".saveBtn").click(function() {
+  $(".local-message").css("display", "flex");
+  setTimeout(function() {
+    $(".local-message").css("display", "none");
+  }, 3000);
 });
 
 
