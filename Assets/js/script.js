@@ -6,17 +6,31 @@
 
 //showing date 
 $(document).ready(function() {
-  var currentDate = dayjs().format('dddd, MMMM D');
- $('#currentDay').text(currentDate);
+  function updateTime() {
+    var currentTime = dayjs().format('h:mm A');
+    $('#currentTime').text(currentTime);
+  }
+
+  function updateDate() {
+    var currentDate = dayjs().format('dddd, MMMM D');
+    $('#currentDay').text(currentDate);
+  }
+
+  updateTime();
+  updateDate();
+
+  setInterval(updateTime, 1000); // Update time every second
+  setInterval(updateDate, 86400000); // Update date every day (24 hours)
 });
 
 
-//button click event
+//button click event when click show message saved to local storage 1 seconds
 $(".saveBtn").click(function() {
   $(".local-message").css("display", "flex");
+
   setTimeout(function() {
     $(".local-message").css("display", "none");
-  }, 3000);
+  }, 1000);
 });
 
 
