@@ -4,34 +4,12 @@
 // in the html.
 
 
-//showing date and time
-$(document).ready(function() {
-  function updateTime() {
-    var currentTime = dayjs().format('h:mm A');
-    $('#currentTime').text(currentTime);
-  }
 
-  function updateDate() {
-    var currentDate = dayjs().format('dddd, MMMM D');
-    $('#currentDay').text(currentDate);
-  }
 
-  updateTime();
-  updateDate();
-
-  setInterval(updateTime, 1000); // Update time every second
-  setInterval(updateDate, 86400000); // Update date every day (24 hours)
-});
 
 
 //button click event when click show message saved to local storage 1 seconds
-$(".saveBtn").click(function() {
-  $(".local-message").css("display", "flex");
 
-  setTimeout(function() {
-    $(".local-message").css("display", "none");
-  }, 1000);
-});
 
 
 
@@ -39,6 +17,13 @@ $(function () {
 
   
   // TODO: Add a listener for click events on the save button. This code should
+  $(".saveBtn").click(function() {
+    $(".local-message").css("display", "flex");
+  
+    setTimeout(function() {
+      $(".local-message").css("display", "none");
+    }, 1000);
+  });
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
   // function? How can DOM traversal be used to get the "hour-x" id of the
@@ -49,7 +34,26 @@ $(function () {
   // block by comparing the id to the current hour. HINTS: How can the id
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
+  // current day and time
+  $(document).ready(function() {
+    function updateTime() {
+      var currentTime = dayjs().format('h:mm A');
+      $('#currentTime').text('Time: ' + currentTime); 
+      // Add the label "Time:" before the time value
+    }
+  
+    function updateDate() {
+      var currentDate = dayjs().format('dddd, MMMM D');
+      $('#currentDay').text('Date: ' + currentDate); 
+      // Add the label "Date:" before the date value
+    }
+    
+    updateTime();
+    updateDate();
+  
+    setInterval(updateTime, 1000); // Update time every second
+    setInterval(updateDate, 86400000); // Update date every day (24 hours)
+  });
   //
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
