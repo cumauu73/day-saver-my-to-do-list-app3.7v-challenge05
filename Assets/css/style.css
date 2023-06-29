@@ -61,6 +61,6 @@ textarea {
 .local-message {
   color: #77dd77;
   font-size: 30px;
-  display: flex;
+  display: none;
   justify-content: center;
 }
