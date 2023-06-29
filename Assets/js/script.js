@@ -4,7 +4,7 @@
 // in the html.
 
 
-//showing date 
+//showing date and time
 $(document).ready(function() {
   function updateTime() {
     var currentTime = dayjs().format('h:mm A');
