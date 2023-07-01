@@ -22,7 +22,12 @@ $(function () {
   
     setTimeout(function() {
       $(".local-message").css("display", "none");
+
+
+      var toDoStorage= localStorage.setItem()
+      $(".saveBtn").on("click", deserializedClickListener);
     }, 1000);
+
   });
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
