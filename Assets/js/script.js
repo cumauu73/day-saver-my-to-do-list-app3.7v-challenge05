@@ -22,11 +22,13 @@ $(function () {
   
     setTimeout(function() {
       $(".local-message").css("display", "none");
-
-
-      var toDoStorage= localStorage.setItem()
-      $(".saveBtn").on("click", deserializedClickListener);
     }, 1000);
+
+console.log(this)
+$(this).siblings(`textarea`)
+console.log(textarea)
+
+
 
   });
   // use the id in the containing time-block as a key to save the user input in
@@ -40,7 +42,7 @@ $(function () {
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current day and time
-  $(document).ready(function() {
+  
     function updateTime() {
       var currentTime = dayjs().format('h:mm A');
       $('#currentTime').text('Time: ' + currentTime); 
@@ -56,9 +58,9 @@ $(function () {
     updateTime();
     updateDate();
   
-    setInterval(updateTime, 1000); // Update time every second
-    setInterval(updateDate, 86400000); // Update date every day (24 hours)
-  });
+   
+   
+  
   //
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
